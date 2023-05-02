@@ -831,10 +831,10 @@ span .project-small {
 
 .container .card .face.face1 .content {
     transition: 0.5s;
-    -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -ms-transition: 0.5s;
-    -o-transition: 0.5s;
+    -webkit-transition: ;
+    -moz-transition: ;
+    -ms-transition: ;
+    -o-transition: ;
 }
 
 .container .card:hover .face.face1 .content {
@@ -914,6 +914,7 @@ span .project-small {
     transition: bottom 0.5s ease-in;
     transform: translateX(0) translateY(0);
     /*slidedownsmoothly*/
+    : ;
     -webkit-transition: bottom 0.5s ease-in;
     -moz-transition: bottom 0.5s ease-in;
     -ms-transition: bottom 0.5s ease-in;
