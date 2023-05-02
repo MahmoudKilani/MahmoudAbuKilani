@@ -8,10 +8,6 @@ a {
     color: black;
 }
 
-hr {
-    background: grey;
-}
-
 #container {
     position: relative;
     display: flex;
@@ -19,7 +15,7 @@ hr {
 
 #profile {
     flex-grow: 1;
-    flex: 15%;
+    flex:15%;
     display: block;
     position: relative;
     margin: 3% 2% 0 10%;
@@ -104,7 +100,6 @@ hr {
 }
 
 #year-graduation,
-#education,
 #more-about,
 #telephone {
     padding: 10px;
@@ -139,17 +134,7 @@ span {
     margin: 0 10px;
 }
 
-#edit-intro {
-    display: block;
-    color: #097bbf;
-    font-family: 'Nunito', sans-serif;
-}
 
-.fab {
-    font-size: 1.1em;
-}
-
-.fab,
 .fas {
     color: whitesmoke;
 }
@@ -173,11 +158,6 @@ span {
 .stroke-transparent {
     -webkit-text-stroke: 1px #000;
     -webkit-text-fill-color: transparent;
-}
-
-.blue {
-    color: #097bbf !important;
-    font-size: 13px;
 }
 
 .stroke-transparent-blue {
@@ -350,15 +330,6 @@ span {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-.popup-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 30%;
-    text-align: center;
-}
-
 .close {
     color: #aaa;
     float: right;
@@ -510,10 +481,6 @@ span {
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
-}
-
-.icon-wrapper {
-    position: relative;
 }
 
 .password-wrapper i {
