@@ -15,7 +15,6 @@ a {
 
 #profile {
     flex-grow: 1;
-    flex:15%;
     display: block;
     position: relative;
     margin: 3% 2% 0 10%;
@@ -133,7 +132,6 @@ span {
 #social-links a {
     margin: 0 10px;
 }
-
 
 .fas {
     color: whitesmoke;
