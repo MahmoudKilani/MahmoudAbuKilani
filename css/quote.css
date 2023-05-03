@@ -1,0 +1,84 @@
+/* @import url('https://fonts.googleapis.com/css?family=Special+Elite'); */
+
+html,
+#quote-body {
+    height: 300px;
+    margin: 0;
+    padding: 20px 0 20px 0;
+}
+
+#quote-body {
+    /*font-family: 'Special Elite', cursive;
+    */
+    color: #3f3f5a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(200deg, rgba(255, 255, 255, 0.1966036414565826) 0%, rgba(249, 249, 249, 1) 100%);
+    border-radius: 50px;
+    margin: -35px 0 100px 0;
+    padding: 40px 0 20px 0;
+}
+
+#quote-h2 {
+    text-align: center;
+    margin-top: 100px;
+}
+
+mark {
+    background-color: #3301ff;
+    border-radius: 20px;
+    padding: 0 20px 0 20px;
+    color: rgba(249, 249, 249);
+}
+
+blockquote {
+    font-weight: 100;
+    font-size: 2rem;
+    text-align: center;
+    max-width: 600px;
+    line-height: 1.2;
+    position: relative;
+    margin: 0;
+    padding: 0.5rem;
+}
+
+blockquote:before,
+blockquote:after {
+    position: absolute;
+    color: #3301ff;
+    font-size: 8rem;
+    width: 4rem;
+    height: 4rem;
+}
+
+blockquote:before {
+    content: '“';
+    left: -5rem;
+    top: -2rem;
+}
+
+blockquote:after {
+    content: '”';
+    right: -5rem;
+    bottom: 1rem;
+}
+
+cite {
+    line-height: 2;
+    text-align: center;
+}
+
+#quote-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#author {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
