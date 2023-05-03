@@ -134,7 +134,6 @@ span {
     margin: 0 10px;
 }
 
-
 .fas {
     color: whitesmoke;
 }
@@ -319,7 +318,7 @@ span {
 /* Download Button Style */
 
 .popup {
-    display: none;
+    display: flex;
     position: fixed;
     z-index: 9999;
     left: 0;
@@ -374,7 +373,7 @@ span {
 }
 
 #popup {
-    width: 495px;
+    max-width: 440px;
     height: auto;
     position: fixed;
     top: 50%;
