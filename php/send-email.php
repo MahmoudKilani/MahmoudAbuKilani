@@ -2,9 +2,9 @@
 if(isset($_GET['submit'])){
     $to = "mahmoudahmedkilani@gmail.com";
     $subject = "New message from your website";
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $message = $_POST['message'];
+    $name = $_GET['name'];
+    $email = $_GET['email'];
+    $message = $_GET['message'];
     // Get IP address of the user
     $ip = $_SERVER['REMOTE_ADDR'];
     
