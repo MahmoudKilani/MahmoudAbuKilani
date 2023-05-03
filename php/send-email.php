@@ -1,5 +1,5 @@
 <?php
-if(isset($_POST['submit'])){
+if(isset($_GET['submit'])){
     $to = "mahmoudahmedkilani@gmail.com";
     $subject = "New message from your website";
     $name = $_POST['name'];
