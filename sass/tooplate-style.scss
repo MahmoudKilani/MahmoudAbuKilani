@@ -26,6 +26,7 @@ $link-font-size: 16px;
 body {
     font-family: $font-base;
     padding-top: 70px;
+    overflow-x: hidden;
 }
 
 .full-screen {
@@ -653,6 +654,7 @@ strong {
 body {
     font-family: $bodyFont;
     background: #333;
+    overflow-x: hidden;
 }
 
 .container {
