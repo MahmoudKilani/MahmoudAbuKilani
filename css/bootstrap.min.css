@@ -743,8 +743,6 @@ button.close {
     }
     body {
         min-width: 992px!important
-        overflow-x: hidden;
-
     }
     .container {
         min-width: 992px!important
