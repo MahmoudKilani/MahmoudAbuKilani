@@ -455,7 +455,7 @@ strong {
 }
 
 .dark-mode .timeline-info small {
-    color: #fff9be;
+    color: var(--secondary);
 }
 
 .dark-mode .project-image {
