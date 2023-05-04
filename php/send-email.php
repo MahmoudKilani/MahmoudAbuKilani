@@ -2,7 +2,7 @@
 if(isset($_POST['submit'])){
     require_once "vendor/autoload.php"; // Path to the Composer autoloader
 
-    $to = "recipient@example.com"; // Recipient email address
+    $to = "mahmoudahmedkilani@gmail.com"; // Recipient email address
     $subject = "New message from your website";
     $name = $_POST['name'];
     $email = $_POST['email'];
