@@ -1,5 +1,5 @@
 <?php
-if(isset($_GET['submit'])){
+if(isset($_POST['submit'])){
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
     require 'PHPMailer/src/PHPMailer.php';
