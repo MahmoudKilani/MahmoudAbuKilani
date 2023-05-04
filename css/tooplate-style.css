@@ -10,9 +10,7 @@
 }
 
 body {
-    font-family: 'Catamaran', sans-serif;
-    padding-top: 0px;
-    /* Full height */ 
+    font-family: 'Catamaran', sans-serif; 
 }
 
 #language-toggle {
