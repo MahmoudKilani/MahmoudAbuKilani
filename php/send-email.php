@@ -4,7 +4,7 @@ if(isset($_POST['submit'])){
     $message = $_POST['message'];
     
     // Call the external PHP file to send the email
-    $result = include('http://example.com/send-email.php?name=' . $name . '&email=' . $email . '&message=' . $message);
+    $result = include('https://mahmoudkilani.000webhostapp.com/php/send-email.php?name=' . $name . '&email=' . $email . '&message=' . $message);
     
     if($result){
         // Show success message popup
