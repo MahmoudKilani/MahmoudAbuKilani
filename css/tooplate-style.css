@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@700&family=Staatliches&display=swap');
 
-@media only screen and (max-width: 991px){
+@media only screen and (max-width: 100%){
     html,
     body{
     width:100%;
