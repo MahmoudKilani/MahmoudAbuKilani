@@ -5,8 +5,19 @@ if(isset($_POST['submit'])){
     $name = $_POST['name'];
     $email = $_POST['email'];
     $message = $_POST['message'];
-
+      // Get IP address of the user
+    $ip = $_SERVER['REMOTE_ADDR'];
     
+    // Make a request to a geolocation API to get the location data
+    $url = "http://ip-api.com/json/$ip";
+    $data = file_get_contents($url);
+    $location = json_decode($data);
+    
+    // Format the location data into a string
+    $location_str = $location->city . ', ' . $location->regionName . ', ' . $location->country;
+    
+    // Add the location to the message
+    $message .= "\n\nLocation: $location_str";
     $headers = "From: " . $name . " <" . $email . ">\r\n";
     if(mail($to, $subject, $message, $headers)){
         // Show success message popup
