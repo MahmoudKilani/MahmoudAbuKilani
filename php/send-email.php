@@ -1,45 +1,33 @@
 <?php
+require_once('https://mahmoudkilani.000webhostapp.com/php/send-email.php');
 if(isset($_POST['submit'])){
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\Exception;
-    require 'PHPMailer/src/PHPMailer.php';
-    require 'PHPMailer/src/Exception.php';
-    require 'PHPMailer/src/SMTP.php';
-
-    $to = "mahmoudahmedkilani@gmail.com"; // Recipient email address
+    $to = "mahmoudahmedkilani@gmail.com";
     $subject = "New message from your website";
     $name = $_POST['name'];
     $email = $_POST['email'];
     $message = $_POST['message'];
-
-    // Create the PHPMailer object
-    $mail = new PHPMailer(true);
-
-    try {
-        // Configure the SMTP connection
-        $mail->isSMTP();                                            
-        $mail->Host       = 'smtp.gmail.com';                     
-        $mail->SMTPAuth   = true;                                   
-        $mail->Username   = 'mahmoudahmedkilani@gmail.com';                     
-        $mail->Password   = '7A\iRT&=czd*&*0[x]Io<?Vx1$$';                               
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;           
-        $mail->Port       = 465;                                    
-
-        // Set the message properties
-        $mail->setFrom($email, $name);
-        $mail->addAddress($to);
-        $mail->isHTML(false);
-        $mail->Subject = $subject;
-        $mail->Body    = $message;
-
-        // Send the message
-        $mail->send();
+    // Get IP address of the user
+    $ip = $_SERVER['REMOTE_ADDR'];
+    
+    // Make a request to a geolocation API to get the location data
+    $url = "http://ip-api.com/json/$ip";
+    $data = file_get_contents($url);
+    $location = json_decode($data);
+    
+    // Format the location data into a string
+    $location_str = $location->city . ', ' . $location->regionName . ', ' . $location->country;
+    
+    // Add the location to the message
+    $message .= "\n\nLocation: $location_str";
+    
+    $headers = "From: " . $name . " <" . $email . ">\r\n";
+    if(mail($to, $subject, $message, $headers)){
         // Show success message popup
         echo '<div class="popup success">Thank you for contacting us, we will get back to you soon!</div>';
-    } catch (Exception $e) {
+    } else {
         // Show error message popup
         echo '<div class="popup error">Sorry, an error occurred. Please try again later.</div>';
     }
 }
 ?>
-
+https://mahmoudkilani.000webhostapp.com/php/send-email.php
