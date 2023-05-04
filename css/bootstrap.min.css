@@ -42,7 +42,6 @@ html {
     -webkit-tap-highlight-color: transparent
 }
 
-
 footer,
 header,
 nav,
@@ -57,8 +56,6 @@ body {
     line-height: 1.5;
     color: #212529;
     text-align: left;
-    overflow-x: hidden;
-
 }
 
 h1,
@@ -73,12 +70,10 @@ p {
     margin-bottom: 1rem
 }
 
-
 ul {
     margin-top: 0;
     margin-bottom: 1rem
 }
-
 
 ul ul {
     margin-bottom: 0
@@ -279,7 +274,6 @@ a>code {
     align-items: center;
 }
 
-
 .col-12,
 .col-lg-5,
 .col-lg-6,
@@ -353,12 +347,10 @@ a>code {
     text-decoration: none
 }
 
-
 .btn:focus {
     outline: 0;
     box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25)
 }
-
 
 .btn:disabled {
     opacity: .65
@@ -667,26 +659,21 @@ button.close {
     margin-bottom: 1.5rem!important
 }
 
-
 .py-4 {
     padding-top: 1.5rem!important
 }
-
 
 .py-4 {
     padding-bottom: 1.5rem!important
 }
 
-
 .py-5 {
     padding-top: 3rem!important
 }
 
-
 .mx-auto {
     margin-right: auto!important
 }
-
 
 .mx-auto {
     margin-left: auto!important
@@ -702,11 +689,9 @@ button.close {
     .mr-lg-5 {
         margin-right: 3rem!important
     }
-    
     .px-lg-5 {
         padding-right: 3rem!important
     }
-    
     .px-lg-5 {
         padding-left: 18rem!important
     }

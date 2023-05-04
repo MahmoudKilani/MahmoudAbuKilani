@@ -34,18 +34,8 @@ body {
     background-size: cover;
 }
 
-#project {
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-size: cover;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    background: linear-gradient(25deg, rgba(255, 255, 255, 0.1966036414565826) 0%, rgba(249, 249, 249, 1) 100%);
-}
-
 #resume {
     margin-top: 50px;
-    /* background-image: url(''); */
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
@@ -779,7 +769,8 @@ strong {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 60px 0 50px 0;
+    padding: auto;
+    background: linear-gradient(25deg, rgba(255, 255, 255, 0.1966036414565826) 0%, rgba(249, 249, 249, 1) 100%);
 }
 
 .project-image {
@@ -799,14 +790,13 @@ span .project-small {
 .container .card {
     position: relative;
     cursor: pointer;
-    padding: 20px;
 }
 
 .container .card .face {
     max-width: 300px;
     height: 200px;
     transition: 0.5s;
-    margin-left: 20px;
+    margin-inline: 15px;
 }
 
 .container .card .face.face1 {

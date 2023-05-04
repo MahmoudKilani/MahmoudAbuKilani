@@ -61,7 +61,6 @@
         <section class="about full-screen d-lg-flex justify-content-center align-items-center" id="about">
             <div class="container">
                 <div class="row">
-
                     <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
                         <div class="about-text">
                             <h1 class="animated animated-text">
@@ -102,11 +101,11 @@
                 </blockquote>
                 <cite id="author"></cite>
             </div>
-    </div>
+        </div>
     </div>
 
     <!-- PROJECTS -->
-    <section class="project py-5" id="project">
+    <section class="project py-5">
         <div class="container">
             <div class="project">
                 <h2>My Works<br><span class="project-small">In this section, you can view my recent projects and products.</span></h2>
@@ -237,16 +236,15 @@
                             <button class="contact-btn"><i class="uil uil-envelope-alt"></i> Email</button>
                             <button class="whatsapp-btn" onclick="openWhatsApp()"><i class="uil uil-whatsapp"></i> WhatsApp</button>
                             <div class="contact-form-wrapper">
-                                <form autocomplete="on" class="contact-form" action="php/send-email.php" method="POST">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" required></textarea>
-    <button type="submit" name="submit">Send Message</button>
-</form>
-
+                                <form autocomplete="on" class="contact-form" action="php/send-email.php" method="POST" target="_top">
+                                    <label for="name">Name:</label>
+                                    <input type="text" id="name" name="name" required>
+                                    <label for="email">Email:</label>
+                                    <input type="email" id="email" name="email" required>
+                                    <label for="message">Message:</label>
+                                    <textarea id="message" name="message" required></textarea>
+                                    <button type="submit" name="submit">Send Message</button>
+                                </form>
                             </div>
                         </div>
                     </div>
