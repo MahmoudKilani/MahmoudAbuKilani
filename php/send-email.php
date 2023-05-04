@@ -1,25 +1,29 @@
 <?php
 if(isset($_POST['submit'])){
-    $to = "mahmoudahmedkilani@gmail.com";
+    require_once "vendor/autoload.php"; // Path to the Composer autoloader
+
+    $to = "recipient@example.com"; // Recipient email address
     $subject = "New message from your website";
     $name = $_POST['name'];
     $email = $_POST['email'];
     $message = $_POST['message'];
-      // Get IP address of the user
-    $ip = $_SERVER['REMOTE_ADDR'];
-    
-    // Make a request to a geolocation API to get the location data
-    $url = "http://ip-api.com/json/$ip";
-    $data = file_get_contents($url);
-    $location = json_decode($data);
-    
-    // Format the location data into a string
-    $location_str = $location->city . ', ' . $location->regionName . ', ' . $location->country;
-    
-    // Add the location to the message
-    $message .= "\n\nLocation: $location_str";
-    $headers = "From: " . $name . " <" . $email . ">\r\n";
-    if(mail($to, $subject, $message, $headers)){
+
+    // Configure the SMTP connection
+    $transport = (new Swift_SmtpTransport('smtp.gmail.com', 465, 'ssl'))
+        ->setUsername('mahmoudahmedkilani@gmail.com') // Your Gmail email address
+        ->setPassword('7A\iRT&=czd*&*0[x]Io<?Vx1$$'); // Your Gmail password
+
+    // Create the Mailer using the SMTP connection
+    $mailer = new Swift_Mailer($transport);
+
+    // Create the message
+    $message = (new Swift_Message($subject))
+        ->setFrom([$email => $name])
+        ->setTo([$to])
+        ->setBody($message);
+
+    // Send the message
+    if($mailer->send($message)){
         // Show success message popup
         echo '<div class="popup success">Thank you for contacting us, we will get back to you soon!</div>';
     } else {
