@@ -1,13 +1,24 @@
 const quotes = [{
-    quote: "The man who comes back through the door in the wall will never be quite the same as the man who went out.",
-    author: "Aldous Huxley"
-}, {
-    quote: "All that we see or seem is but a dream within a dream.",
-    author: "Edgar Allan Poe"
-}, {
-    quote: "It is not in the stars to hold our destiny, but in ourselves.",
-    author: "William Shakespeare"
-}];
+        quote: "Do not let your difficulties fill you with anxiety, after all it is only in the darkest nights that stars shine more brightly.",
+        author: "Ali Ibn Abi Talib"
+    }, {
+        quote: "Be the change you wish to see in the world.",
+        author: "Mahatma Gandhi"
+    }, {
+        quote: "The only way to do great work is to love what you do",
+        author: "Steve Jobs"
+    }, {
+        quote: "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+        author: "Winston Churchill"
+    }, {
+        quote: "Do not go where the path may lead, go instead where there is no path and leave a trail.",
+        author: "Ralph Waldo Emerson"
+    }, {
+        quote: "Patience is the key to relief.",
+        author: "Ibn Qayyim Al-Jawziyya"
+    }
+
+];
 
 let index = 0;
 let isDeleting = false;
