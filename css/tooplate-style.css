@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@700&family=Staatliches&display=swap');
-body {
-    font-family: 'Catamaran', sans-serif;
-    padding-top: 0px;
-    /* Full height */
-    height: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
+media only screen and (max-width: 768px) {
+    html,
+    body {
+        font-family: 'Catamaran', sans-serif;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        padding-top: 0px;
+    }
 }
 
 #language-toggle {
