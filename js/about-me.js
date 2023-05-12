@@ -23,7 +23,7 @@ submitPasswordBtn.addEventListener("click", () => {
 
     if (password === "123") {
         // Open the Google Drive link
-        window.location.href = "https://drive.google.com/file/d/1k0LKtPYmcksehR8UM9F1ubXh4OekW5D0/view?usp=sharing";
+        window.location.href = "https://drive.google.com/file/d/1K_BurjLsTojGG5UTGVkhFDTa1XSkI4jp/view?usp=sharing";
 
         // Close the popup
         popup.style.display = "none";
