@@ -411,10 +411,9 @@ a>code {
 
 .navbar-brand {
     display: inline-block;
-    padding-top: .3125rem;
-    padding-bottom: .3125rem;
+    padding-bottom: 0.3125rem;
     margin-right: 1rem;
-    font-size: 1.25rem;
+    font-size: 34px;
     line-height: inherit;
     white-space: nowrap
 }

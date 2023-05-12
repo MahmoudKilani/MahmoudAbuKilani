@@ -153,6 +153,8 @@ strong {
 }
 
 .custom-btn {
+    margin-inline: 15px;
+    margin-left: 0px;
     background: #000000;
     color: #ffffff;
     font-weight: bold;
@@ -271,13 +273,12 @@ strong {
 
 .navbar[class*="headroom--not-top"] {
     background: #ffffff;
-    /* border-bottom: 1px solid #4a4a49; */
     padding-top: 0;
     padding-bottom: 0;
 }
 
 .navbar-brand {
-    font-weight: bold;
+    font-family: 'Blaka', cursive;
 }
 
 .navbar-expand-sm .navbar-nav .nav-link {
@@ -293,7 +294,6 @@ strong {
 .nav-link span {
     position: relative;
     display: inline-block;
-    /* transition: transform 0.3s; */
 }
 
 .nav-link span:before {
