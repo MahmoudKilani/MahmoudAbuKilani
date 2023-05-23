@@ -33,7 +33,7 @@ body {
 }
 
 .header {
-    background-image: url('../images/undraw/lins.png');
+    background-image: url('../images/undraw/');
     background-repeat: no-repeat;
     background-attachment: inherit;
     background-size: cover;
@@ -42,7 +42,7 @@ body {
 #project {
     padding-top: 150px;
     padding-bottom: 150px;
-    background: linear-gradient(80deg, rgba(255, 255, 255, 0.1966036414565826) 0%, rgba(249, 249, 249, 1) 100%);
+    background: linear-gradient(-80deg, rgba(255, 255, 255, 0.1966036414565826) 0%, rgba(249, 249, 249, 1) 100%);
 }
 
 #resume {
@@ -53,7 +53,7 @@ body {
 }
 
 #contact {
-    background-image: url('../images/undraw/footer.png');
+    background-image: url('../images/undraw/');
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
@@ -252,15 +252,13 @@ strong {
 }
 
 .navbar {
-    position: inherit;
+    position: relative;
     top: 0;
     right: 0;
     left: 0;
     z-index: 999999;
     will-change: transform;
     transition: transform 200ms linear;
-    transition: top 0.3s;
-    /* border-bottom: solid 1px #495057; */
 }
 
 .navbar[class*="-unpinned"] {
@@ -273,12 +271,13 @@ strong {
 
 .navbar[class*="headroom--not-top"] {
     background: #ffffff;
+    border-bottom: 1px solid #f0f0f0;
     padding-top: 0;
     padding-bottom: 0;
 }
 
 .navbar-brand {
-    font-family: 'Blaka', cursive;
+    font-weight: bold;
 }
 
 .navbar-expand-sm .navbar-nav .nav-link {
@@ -294,6 +293,7 @@ strong {
 .nav-link span {
     position: relative;
     display: inline-block;
+    transition: transform 0.3s;
 }
 
 .nav-link span:before {
@@ -393,7 +393,7 @@ strong {
 }
 
 .dark-mode .btn.mr-lg-2.custom-btn {
-    border: solid 1px white;
+    border: solid 3px white;
 }
 
 .dark-mode .navbar-light .navbar-nav .nav-link {
@@ -489,7 +489,7 @@ strong {
 
 .dark-mode #project,
 .dark-mode .main-footer {
-    background: linear-gradient(25deg, rgba(0, 0, 0, 0.197) 0%, rgba(20, 19, 19, 1) 100%);
+    background: linear-gradient(-25deg, rgba(0, 0, 0, 0.197) 0%, rgba(20, 19, 19, 1) 100%);
 }
 
 .dark-mode #quote-body {
