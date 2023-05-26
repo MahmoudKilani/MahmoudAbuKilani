@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/unicons.css">
     <link rel="stylesheet" href="css/quote.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="css/emailpopup.css">
     <!-- MAIN STYLE -->
     <link rel="stylesheet" href="css/tooplate-style.css">
 
@@ -96,7 +97,7 @@
             <div class="project">
                 <h2>My Works<br><span class="project-small">In this section, you can view my recent projects and products.</span></h2>
                 <div class="card">
-                    <a href="https://www.behance.net/AbuKilani" target="_blank">
+                    <a href="https://www.behance.net/mahmoudkilani1" target="_blank">
                         <div class="face face1 one">
                             <div class="content">
                                 <img class="project-image one" src="images/undraw/design.gif" alt="design.gif">
@@ -234,7 +235,7 @@
                             <button class="contact-btn"><i class="uil uil-envelope-alt"></i> Email</button>
                             <button class="whatsapp-btn" onclick="openWhatsApp()"><i class="uil uil-whatsapp"></i> WhatsApp</button>
                             <div class="contact-form-wrapper">
-                                <form class="contact-form" action="https://mahmoudkilani.000webhostapp.com/php/send-email.php" method="POST" target="_blank">
+                                <form id="contact-form" action="https://mahmoudkilani.000webhostapp.com/php/send-email.php" method="POST" onsubmit="return handleSubmit();">
                                     <label for="name">Name:</label>
                                     <input type="text" id="name" name="name" required>
                                     <label for="email">Email:</label>
@@ -292,7 +293,8 @@
     <script src="js/owl.carousel.min.js "></script>
     <script src="js/smoothscroll.js "></script>
     <script src="js/custom.js "></script>
-    <script src="https://mahmoudkilani.000webhostapp.com/js/quote.js "></script>
+    <script src="js/quote.js "></script>
+    <script src="js/sendmailPopup.js"></script>
 </body>
 
 </html>
