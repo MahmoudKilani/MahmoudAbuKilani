@@ -1,4 +1,4 @@
-ldocument.querySelector('.close-icon').addEventListener('click', function() {
+document.querySelector('.close-icon').addEventListener('click', function() {
     document.getElementById('email-popup').style.display = 'none';
 });
 
@@ -31,7 +31,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
                 if (response.status === 'success') {
                     showPopup('Message sent successfully.', 'success');
                 } else {
-                    showPopup('Sent successfully.', 'success');
+                    showPopup('Error sending message. Please try again later.', 'error');
                 }
             } else {
                 // Show error message if there was an issue with the AJAX request
@@ -56,34 +56,23 @@ function showPopup(message, status) {
     var popupHeading = popup.querySelector('.popup-heading');
     var popupMessage = popup.querySelector('.popup-message');
 
-    popup.classList.remove('popup-success', 'popup-error', 'popup-info');
-    popupIcon.classList.remove('uil-check-circle', 'uil-exclamation-octagon', 'uil-info-circle');
+    popup.classList.remove('popup-success', 'popup-error');
+    popupIcon.classList.remove('uil-check-circle', 'uil-exclamation-octagon');
 
     if (status === 'success') {
         popup.classList.add('popup-success');
         popupIcon.classList.add('uil-check-circle');
         popupHeading.textContent = 'Sent Successfully';
-    } else if (status === 'error') {
+    } else {
         popup.classList.add('popup-error');
         popupIcon.classList.add('uil-exclamation-octagon');
-        popupHeading.textContent = 'Sent Successfully';
-    } else {
-        popup.classList.add('popup-info');
-        popupIcon.classList.add('uil-info-circle');
-        popupHeading.textContent = 'Sending...';
+        popupHeading.textContent = 'Error Sending';
     }
 
     popupMessage.textContent = message;
     popup.style.display = 'flex';
 
-    if (status === 'info') {
-        var timeout = setTimeout(function() {
-            popup.style.display = 'none';
-        }, 3000); // Display the popup for 2 seconds before hiding
-
-        // Clear the timeout if necessary
-        popup.addEventListener('click', function() {
-            clearTimeout(timeout);
-        });
-    }
+    setTimeout(function() {
+        popup.style.display = 'none';
+    }, 2000); // Display the popup for 2 seconds before hiding
 }
