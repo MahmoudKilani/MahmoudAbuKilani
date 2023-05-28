@@ -1,61 +1,45 @@
-#email-popup-overlay {
+.email-popup-overlay {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 9999;
-    display: none;
     justify-content: center;
     align-items: center;
+    z-index: 9999;
 }
 
-#email-popup {
-    position: relative;
+.email-popup {
     background-color: #fff;
-    border-radius: 15px;
-    border: 1px solid #ccc;
+    border-radius: 5px;
     padding: 20px;
-    max-width: 400px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
+    max-width: 400px;
 }
 
-#email-popup.success {
-    background-color: #c3e6cb;
-    color: #155724;
-}
-
-#email-popup.error {
-    background-color: #f8d7da;
-    color: #721c24;
-}
-
-#close-icon {
+.close-icon {
     position: absolute;
     top: 10px;
     right: 10px;
-    cursor: pointer;
-    font-size: 20px;
-}
-
-#popup-message {
-    margin-bottom: 10px;
-}
-
-#email-popup i {
-    color: #721c24;
-    font-size: 64px;
-}
-
-#email-popup h1 {
-    margin-bottom: 20px;
     font-size: 24px;
-    margin-top: -5px;
+    cursor: pointer;
 }
 
-#email-popup p {
+.close-icon:hover {
+    color: #888;
+}
+
+.popup-icon {
+    font-size: 48px;
     margin-bottom: 10px;
-    font-size: 16px;
+}
+
+.popup-success {
+    color: #28a745;
+}
+
+.popup-error {
+    color: #dc3545;
 }
