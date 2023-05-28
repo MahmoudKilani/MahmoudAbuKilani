@@ -17,7 +17,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
 
     // Send the email using AJAX
     var xhr = new XMLHttpRequest();
-    var url = 'https://kilaniemails.000webhostapp.com/send-email.php'; // Replace with the correct URL to your PHP file
+    var url = 'https://kilaniemails.000webhostapp.com/send-email.php'; // Replace with thee correct URL to your PHP file
     var params = 'name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email) + '&message=' + encodeURIComponent(message);
 
     xhr.open('POST', url, true);
