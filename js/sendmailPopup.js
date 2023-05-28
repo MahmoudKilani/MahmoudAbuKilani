@@ -24,17 +24,19 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
     xhr.onreadystatechange = function() {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                var response = JSON.parse(xhr.responseText);
-                // Display success or error message based on the response
-                showPopup(response.message, response.status === 'success');
-            } else {
-                // Show error message if there was an issue with the AJAX request
-                showPopup('Sorry, an error occurred. Please try again later.', false);
-            }
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+        if (xhr.status === 200) {
+            var response = JSON.parse(xhr.responseText);
+            console.log(response); // Log the response to check the values
+            // Display success or error message based on the response
+            showPopup(response.message, response.status === 'success');
+        } else {
+            // Show error message if there was an issue with the AJAX request
+            showPopup('Sorry, an error occurred. Please try again later.', false);
         }
-    };
+    }
+};
+
 
     xhr.send(params);
 
