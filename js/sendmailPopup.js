@@ -27,14 +27,12 @@ document.getElementById('contact-form').addEventListener('submit', function(even
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
                 var response = JSON.parse(xhr.responseText);
-                // Display success or error message based on the response
                 if (response.status === 'success') {
                     showPopup('Message sent successfully.', true);
                 } else {
                     showPopup('Error sending message. Please try again later.', false);
                 }
             } else {
-                // Show error message if there was an issue with the AJAX request
                 showPopup('Sorry, an error occurred. Please try again later.', false);
             }
         }
@@ -57,16 +55,16 @@ function showPopup(message, success) {
     var popupMessage = popup.querySelector('.popup-message');
 
     popup.classList.remove('popup-success', 'popup-error');
-    popupIcon.classList.remove('uil-check-circle', 'uil-exclamation-octagon');
+    popupIcon.classList.remove('fa-check-circle', 'fa-exclamation-circle');
 
     if (success) {
         popup.classList.add('popup-success');
-        popupIcon.classList.add('uil-check-circle');
-        popupHeading.textContent = 'Sent Successfully';
+        popupIcon.classList.add('fa-check-circle');
+        popupHeading.textContent = 'Message Sent Successfully';
     } else {
         popup.classList.add('popup-error');
-        popupIcon.classList.add('uil-exclamation-octagon');
-        popupHeading.textContent = 'Error Sending';
+        popupIcon.classList.add('fa-exclamation-circle');
+        popupHeading.textContent = 'Error Sending Message';
     }
 
     popupMessage.textContent = message;
