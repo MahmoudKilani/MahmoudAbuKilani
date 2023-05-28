@@ -18,6 +18,7 @@
     text-align: center;
     max-width: 400px;
     position: relative;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .close-icon {
@@ -25,9 +26,8 @@
     top: 10px;
     right: 10px;
     font-size: 24px;
-    color: #888;
     cursor: pointer;
-    transition: color 0.3s ease;
+    color: #888;
 }
 
 .close-icon:hover {
@@ -40,8 +40,7 @@
 }
 
 .popup-heading {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 20px;
     margin-bottom: 10px;
 }
 
@@ -50,10 +49,14 @@
     margin-bottom: 20px;
 }
 
-.popup-success {
+.popup-success .popup-icon {
     color: #28a745;
 }
 
-.popup-error {
+.popup-error .popup-icon {
     color: #dc3545;
+}
+
+.popup-info .popup-icon {
+    color: #ffc107;
 }
