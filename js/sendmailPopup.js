@@ -30,10 +30,10 @@ document.getElementById('contact-form').addEventListener('submit', function(even
                 if (response.status === 'success') {
                     showPopup('Message sent successfully.', 'success');
                 } else {
-                    showPopup('Message sent successfully.', 'error');
+                    showPopup('I appreciate your message and will get back to you as soon as possible.', 'error');
                 }
             } else {
-                showPopup('Thank you for your message. We will get back to you soon.', 'error');
+                showPopup('I appreciate your message and will get back to you as soon as possible.', 'error');
             }
         }
     };
@@ -55,15 +55,15 @@ function showPopup(message, status) {
     var popupMessage = popup.querySelector('.popup-message');
 
     popup.classList.remove('popup-success', 'popup-error');
-    popupIcon.classList.remove('icon-check', 'icon-exclamation');
+    popupIcon.classList.remove('uil-check-circle', 'uil-exclamation-octagon');
 
     if (status === 'success') {
         popup.classList.add('popup-success');
-        popupIcon.classList.add('icon-exclamation');
-        popupHeading.textContent = 'Message Sent Successfully';
+        popupIcon.classList.add('uil-exclamation-octagon');
+        popupHeading.textContent = 'Error Sending';
     } else {
         popup.classList.add('popup-error');
-        popupIcon.classList.add('icon-check');
+        popupIcon.classList.add('uil-check-circle');
         popupHeading.textContent = 'Message Sent Successfully';
     }
 

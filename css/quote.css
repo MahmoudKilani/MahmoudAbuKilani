@@ -1,10 +1,10 @@
 /* @import url('https://fonts.googleapis.com/css?family=Special+Elite'); */
 
-html,
 #quote-body {
-    height: 300px;
+    display: block;
     margin: 0;
     padding: 0px 0 20px 0;
+    max-height: 300px;
 }
 
 #quote-body {
@@ -38,7 +38,7 @@ blockquote {
     font-weight: 100;
     font-size: 2rem;
     text-align: center;
-    max-width: 600px;
+    max-width: 800px;
     line-height: 1.2;
     position: relative;
     margin: 0;
@@ -76,7 +76,7 @@ cite {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100%;
+    max-width: 900px;
 }
 
 #author {

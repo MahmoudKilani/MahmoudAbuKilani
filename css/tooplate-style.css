@@ -57,6 +57,8 @@ body {
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
+    padding-bottom: 70px;
+    display: block;
 }
 
 .full-screen {
@@ -253,16 +255,24 @@ strong {
 
 .navbar {
     position: relative;
-    top: 0;
+    top: 10px;
     right: 0;
     left: 0;
     z-index: 999999;
     will-change: transform;
-    transition: transform 200ms linear;
+    transition: transform 700ms ease-in-out;
+    -webkit-transition: transform 700ms ease-in-out;
+    -moz-transition: transform 700ms ease-in-out;
+    -ms-transition: transform 700ms ease-in-out;
+    -o-transition: transform 700ms ease-in-out;
 }
 
 .navbar[class*="-unpinned"] {
     transform: translate(0, -150%);
+    -webkit-transform: translate(0, -150%);
+    -moz-transform: translate(0, -150%);
+    -ms-transform: translate(0, -150%);
+    -o-transform: translate(0, -150%);
 }
 
 .navbar[class*="-pinned"] {
@@ -271,7 +281,6 @@ strong {
 
 .navbar[class*="headroom--not-top"] {
     background: #ffffff;
-    border-bottom: 1px solid #f0f0f0;
     padding-top: 0;
     padding-bottom: 0;
 }
@@ -293,7 +302,11 @@ strong {
 .nav-link span {
     position: relative;
     display: inline-block;
-    transition: transform 0.3s;
+    transition: transform 0.6s;
+    -webkit-transition: transform 0.6s;
+    -moz-transition: transform 0.6s;
+    -ms-transition: transform 0.6s;
+    -o-transition: transform 0.6s;
 }
 
 .nav-link span:before {
@@ -475,7 +488,7 @@ strong {
 
 .dark-mode .contact-btn,
 .dark-mode .whatsapp-btn,
-.dark-mode #scroll-up i,
+.dark-mode #scroll-up,
 .dark-mode .contact-form button[type="submit"] {
     color: rgb(0, 0, 0);
     background-color: #ffffff
@@ -495,6 +508,11 @@ strong {
 .dark-mode #quote-body {
     color: rgb(249, 249, 249);
     background: linear-gradient(-25deg, rgba(0, 0, 0, 0.197) 0%, rgba(20, 19, 19, 1) 100%);
+}
+
+.dark-mode #email-popup h1,
+#email-popup p {
+    color: #474559;
 }
 
 .timeline-wrapper {
@@ -994,31 +1012,54 @@ span .project-small {
     width: 50px;
 }
 
-#scroll-up {
+
+/* Arrow Up Button */
+
+.scrollup {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    display: none;
-    z-index: 9999;
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    /* z-index: 9999; */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 }
 
-#scroll-up i {
-    font-size: 24px;
-    color: white;
-    background-color: black;
-    border-radius: 12px;
-    box-shadow: 0 1px 20px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    -ms-border-radius: 12px;
-    -o-border-radius: 12px;
+
+/* Arrow Up Button - Show */
+
+.scrollup.show {
+    opacity: 1;
 }
 
-#scroll-up:hover i {
-    transform: translateY(-8px);
-    -webkit-transform: translateY(-8px);
-    -moz-transform: translateY(-8px);
-    -ms-transform: translateY(-8px);
-    -o-transform: translateY(-8px);
+
+/* Arrow Up Button - Mobile */
+
+@media (max-width: 767px) {
+    .scrollup {
+        display: block;
+        /* Add this line to show the arrow on mobile */
+        bottom: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 16px;
+    }
+    /* Add this media query to hide the arrow on desktop */
+    @media (min-width: 768px) {
+        .scrollup {
+            display: none;
+        }
+    }
+}
+
+
 }
