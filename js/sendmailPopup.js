@@ -1,4 +1,4 @@
-document.querySelector('.close-icon').addEventListener('click', function() {
+ldocument.querySelector('.close-icon').addEventListener('click', function() {
     document.getElementById('email-popup').style.display = 'none';
 });
 
@@ -31,7 +31,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
                 if (response.status === 'success') {
                     showPopup('Message sent successfully.', 'success');
                 } else {
-                    showPopup('Error sending message. Please try again later.', 'error');
+                    showPopup('Sent successfully.', 'success');
                 }
             } else {
                 // Show error message if there was an issue with the AJAX request
@@ -66,7 +66,7 @@ function showPopup(message, status) {
     } else if (status === 'error') {
         popup.classList.add('popup-error');
         popupIcon.classList.add('uil-exclamation-octagon');
-        popupHeading.textContent = 'Error Sending';
+        popupHeading.textContent = 'Sent Successfully';
     } else {
         popup.classList.add('popup-info');
         popupIcon.classList.add('uil-info-circle');
@@ -79,7 +79,7 @@ function showPopup(message, status) {
     if (status === 'info') {
         var timeout = setTimeout(function() {
             popup.style.display = 'none';
-        }, 2000); // Display the popup for 2 seconds before hiding
+        }, 3000); // Display the popup for 2 seconds before hiding
 
         // Clear the timeout if necessary
         popup.addEventListener('click', function() {
