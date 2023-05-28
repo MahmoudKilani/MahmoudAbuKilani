@@ -15,9 +15,6 @@ document.getElementById('contact-form').addEventListener('submit', function(even
         return false;
     }
 
-    // Show "Sending..." message
-    showPopup('Sending...', 'info');
-
     // Send the email using AJAX
     var xhr = new XMLHttpRequest();
     var url = 'https://kilaniemails.000webhostapp.com/send-email.php'; // Replace with the correct URL to your PHP file
@@ -30,12 +27,14 @@ document.getElementById('contact-form').addEventListener('submit', function(even
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
                 var response = JSON.parse(xhr.responseText);
+                // Display success or error message based on the response
                 if (response.status === 'success') {
                     showPopup('Message sent successfully.', 'success');
                 } else {
                     showPopup('Error sending message. Please try again later.', 'error');
                 }
             } else {
+                // Show error message if there was an issue with the AJAX request
                 showPopup('Sorry, an error occurred. Please try again later.', 'error');
             }
         }
@@ -58,28 +57,33 @@ function showPopup(message, status) {
     var popupMessage = popup.querySelector('.popup-message');
 
     popup.classList.remove('popup-success', 'popup-error', 'popup-info');
-    popupIcon.classList.remove('icon-check', 'icon-exclamation', 'icon-hourglass');
+    popupIcon.classList.remove('uil-check-circle', 'uil-exclamation-octagon', 'uil-info-circle');
 
     if (status === 'success') {
         popup.classList.add('popup-success');
-        popupIcon.classList.add('icon-check');
-        popupHeading.textContent = 'Message Sent Successfully';
+        popupIcon.classList.add('uil-check-circle');
+        popupHeading.textContent = 'Sent Successfully';
     } else if (status === 'error') {
         popup.classList.add('popup-error');
-        popupIcon.classList.add('icon-exclamation');
-        popupHeading.textContent = 'Error Sending Message';
-    } else if (status === 'info') {
+        popupIcon.classList.add('uil-exclamation-octagon');
+        popupHeading.textContent = 'Error Sending';
+    } else {
         popup.classList.add('popup-info');
-        popupIcon.classList.add('icon-hourglass');
+        popupIcon.classList.add('uil-info-circle');
         popupHeading.textContent = 'Sending...';
     }
 
     popupMessage.textContent = message;
     popup.style.display = 'flex';
 
-if (status !== 'info') {
-        setTimeout(function() {
+    if (status === 'info') {
+        var timeout = setTimeout(function() {
             popup.style.display = 'none';
         }, 2000); // Display the popup for 2 seconds before hiding
+
+        // Clear the timeout if necessary
+        popup.addEventListener('click', function() {
+            clearTimeout(timeout);
+        });
     }
 }
