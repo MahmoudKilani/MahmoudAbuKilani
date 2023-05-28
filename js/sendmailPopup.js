@@ -76,4 +76,10 @@ function showPopup(message, status) {
 
     popupMessage.textContent = message;
     popup.style.display = 'flex';
+
+if (status !== 'info') {
+        setTimeout(function() {
+            popup.style.display = 'none';
+        }, 2000); // Display the popup for 2 seconds before hiding
+    }
 }
