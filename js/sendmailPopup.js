@@ -1,72 +1,26 @@
-// Function to show the email popup
+document.querySelector('.close-icon').addEventListener('click', function() {
+    document.getElementById('email-popup').style.display = 'none';
+});
+
 function showPopup(message, success) {
-    var overlay = document.getElementById('email-popup-overlay');
     var popup = document.getElementById('email-popup');
-    var popupMessage = document.getElementById('popup-message');
-    var closeButton = document.getElementById('close-icon');
+    var popupIcon = popup.querySelector('.popup-icon');
+    var popupHeading = popup.querySelector('.popup-heading');
+    var popupMessage = popup.querySelector('.popup-message');
 
-    // Set the popup content
-    popup.className = success ? 'success' : 'error';
-    popupMessage.textContent = message;
+    popup.classList.remove('popup-success', 'popup-error');
+    popupIcon.classList.remove('uil-check-circle', 'uil-exclamation-octagon');
 
-    // Show the popup
-    overlay.style.display = 'flex';
-
-    // Close the popup when the close icon is clicked
-    closeButton.addEventListener('click', function() {
-        overlay.style.display = 'none';
-    });
-}
-
-// Function to send the email using AJAX
-function sendEmail(name, email, message) {
-    var xhr = new XMLHttpRequest();
-    var url = 'https://kilaniemails.000webhostapp.com/send-email.php'; // Replace with your correct PHP file URL
-    var params = 'name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email) + '&message=' + encodeURIComponent(message);
-
-    xhr.open('POST', url, true);
-    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                var response = xhr.responseText;
-                // Display success or error message based on the response
-                showPopup(response, response === 'success');
-            } else {
-                // Show error message if there was an issue with the AJAX request
-                showPopup('Sorry, an error occurred. Please try again later.', false);
-            }
-        }
-    };
-
-    xhr.send(params);
-}
-
-// Function to handle form submission
-function handleSubmit(event) {
-    event.preventDefault();
-
-    var name = document.getElementById('name').value;
-    var email = document.getElementById('email').value;
-    var message = document.getElementById('message').value;
-
-    // Perform form validation
-    if (name === '' || email === '' || message === '') {
-        showPopup('Please fill in all fields.', false);
-        return false;
+    if (success) {
+        popup.classList.add('popup-success');
+        popupIcon.classList.add('uil-check-circle');
+        popupHeading.textContent = 'Sent Successfully';
+    } else {
+        popup.classList.add('popup-error');
+        popupIcon.classList.add('uil-exclamation-octagon');
+        popupHeading.textContent = 'Error Sending';
     }
 
-    // Send the email using AJAX
-    sendEmail(name, email, message);
-
-    // Reset form fields
-    document.getElementById('name').value = '';
-    document.getElementById('email').value = '';
-    document.getElementById('message').value = '';
-
-    return false;
+    popupMessage.textContent = message;
+    popup.style.display = 'flex';
 }
-
-// Attach form submission event listener
-document.getElementById('contact-form').addEventListener('submit', handleSubmit);
