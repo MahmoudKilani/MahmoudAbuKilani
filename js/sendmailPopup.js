@@ -33,7 +33,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
                     showPopup('Message sent successfully.', 'error');
                 }
             } else {
-                showPopup('Sorry, an error occurred. Please try again later.', 'error');
+                showPopup('Thank you for your message. We will get back to you soon.', 'error');
             }
         }
     };
