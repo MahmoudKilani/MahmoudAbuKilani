@@ -11,9 +11,12 @@ document.getElementById('contact-form').addEventListener('submit', function(even
 
     // Perform form validation
     if (name === '' || email === '' || message === '') {
-        showPopup('Please fill in all fields.', false);
+        showPopup('Please fill in all fields.', 'error');
         return false;
     }
+
+    // Show "Sending..." message
+    showPopup('Sending...', 'info');
 
     // Send the email using AJAX
     var xhr = new XMLHttpRequest();
@@ -28,12 +31,12 @@ document.getElementById('contact-form').addEventListener('submit', function(even
             if (xhr.status === 200) {
                 var response = JSON.parse(xhr.responseText);
                 if (response.status === 'success') {
-                    showPopup('Message sent successfully.', true);
+                    showPopup('Message sent successfully.', 'success');
                 } else {
-                    showPopup('Error sending message. Please try again later.', false);
+                    showPopup('Error sending message. Please try again later.', 'error');
                 }
             } else {
-                showPopup('Sorry, an error occurred. Please try again later.', false);
+                showPopup('Sorry, an error occurred. Please try again later.', 'error');
             }
         }
     };
@@ -48,23 +51,27 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     return false;
 });
 
-function showPopup(message, success) {
+function showPopup(message, status) {
     var popup = document.getElementById('email-popup');
     var popupIcon = popup.querySelector('.popup-icon');
     var popupHeading = popup.querySelector('.popup-heading');
     var popupMessage = popup.querySelector('.popup-message');
 
-    popup.classList.remove('popup-success', 'popup-error');
-    popupIcon.classList.remove('fa-check-circle', 'fa-exclamation-circle');
+    popup.classList.remove('popup-success', 'popup-error', 'popup-info');
+    popupIcon.classList.remove('icon-check', 'icon-exclamation', 'icon-hourglass');
 
-    if (success) {
+    if (status === 'success') {
         popup.classList.add('popup-success');
-        popupIcon.classList.add('fa-check-circle');
+        popupIcon.classList.add('icon-check');
         popupHeading.textContent = 'Message Sent Successfully';
-    } else {
+    } else if (status === 'error') {
         popup.classList.add('popup-error');
-        popupIcon.classList.add('fa-exclamation-circle');
+        popupIcon.classList.add('icon-exclamation');
         popupHeading.textContent = 'Error Sending Message';
+    } else if (status === 'info') {
+        popup.classList.add('popup-info');
+        popupIcon.classList.add('icon-hourglass');
+        popupHeading.textContent = 'Sending...';
     }
 
     popupMessage.textContent = message;
