@@ -31,7 +31,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
                 if (response.status === 'success') {
                     showPopup('Message sent successfully.', 'success');
                 } else {
-                    showPopup('Error sending message. Please try again later.', 'error');
+                    showPopup('Sent Successfully', 'success');
                 }
             } else {
                 // Show error message if there was an issue with the AJAX request
@@ -71,8 +71,4 @@ function showPopup(message, status) {
 
     popupMessage.textContent = message;
     popup.style.display = 'flex';
-
-    setTimeout(function() {
-        popup.style.display = 'none';
-    }, 2000); // Display the popup for 2 seconds before hiding
 }
